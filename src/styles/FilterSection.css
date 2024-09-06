@@ -1,65 +1,17 @@
-.filter-section {
-    background-color: #f9f9f9;
-    padding: 20px;
-    margin-right:1rem;
-    border-right: 1px solid #ddd;
-    width: fit-content;
-  }
-  
-  .filter-group {
-    background-color: #f6f4f4;
-    margin: 1rem 0;
-    padding: 1rem;
-  }
-  
-  .filter-group h4 {
-    margin-bottom: 10px;
-  }
-  
-  .filter-group label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  .filter-group input[type="text"] {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  .filter-group select {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
+.filter-group {
+  margin-bottom: 1rem;
+}
 
-  .min-max-box{
-    display: flex;
-    background-color: #fff;
-    border: 1px solid rgb(108, 108, 108);
-    align-items: center;
-    border-radius: 0.25rem ;
-    padding: 0.5rem;
-  }
+.filter-group label {
+  display: block;
+  margin-bottom: 5px;
+}
 
-  #min-box{
-    margin-right: 1rem;
-  }
-  #max-box{
-    margin-left: 1rem;
-  }
+input[type="number"] {
+  width: 3rem;
+  margin: 0 5px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
 
-  #min-price-input, #max-price-input{
-    /* margin: 0.5rem 0.5rem; */
-    width: 2rem;
-    background-color: transparent;
-    outline: none;
-    border: none; 
-  }
-
-  /* #min-price-input{
-    margin-left: 0;
-  } */
-  

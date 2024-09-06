@@ -1,71 +1,70 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import FilterSection from './components/FilterSection';
+import SortFilterSection from './components/SortFilterSection';
 import ProductCard from './components/ProductCard';
 import './styles/App.css';
+
+
+import { stocks } from "./dummy/data/cars.json";
+
 const App = () => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [categories, setCategories] = useState([]);
   const [selectedFuel, setSelectedFuel] = useState([]);
-  // const [priceRange, setPriceRange] = useState([0, 5000000]);
   const [priceRange, setPriceRange] = useState({ min: 0, max: Number.MAX_SAFE_INTEGER });
-  const [sortOrder, setSortOrder] = useState('asc');
+  const [sortOrder, setSortOrder] = useState('asc');  
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const [productsResponse, categoriesResponse] = await Promise.all([
-          // https://stg.carwale.com/api/stocks?fuel=1+2
-          // axios.get('https://dummyjson.com/products'),
-          // axios.get('https://dummyjson.com/c/2ddb-0dd0-4899-aef2'),
-          // axios.get('https://stg.carwale.com/api/stocks?fuel=1+2+3+4+5+6&budget=0-'),
-          axios.get('/api/stocks'),
-          axios.get('https://dummyjson.com/products/categories')
-        ]);
-        console.log(productsResponse);
-        console.log(productsResponse.data);
-        console.log(productsResponse.data.stocks);
-        
-        setProducts(productsResponse.data.stocks);
-        setFilteredProducts(productsResponse.data.stocks);
-        setCategories(categoriesResponse.data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
+      // *************************** DUMMY DATA TO BE REMOVED LATER ***************************
+      
+      setProducts(stocks)
+
+      // **************************************************************************************
+      /*
+      console.log(productsResponse.data.stocks);
+      
+      
+      console.log(productsResponse);
+      console.log(productsResponse.data);
+      console.log(productsResponse.data.stocks);
+    try {
+      const [productsResponse, categoriesResponse] = await Promise.all([
+        // https://stg.carwale.com/api/stocks?fuel=1+2
+        // axios.get('https://dummyjson.com/products'),
+        // axios.get('https://dummyjson.com/c/2ddb-0dd0-4899-aef2'),
+        // axios.get('https://stg.carwale.com/api/stocks?fuel=1+2+3+4+5+6&budget=0-'),
+        axios.get('/api/stocks'),
+        axios.get('https://dummyjson.com/products/categories')
+      ]);
+ 
+      setProducts(productsResponse.data.stocks);
+ 
+ 
+      setFilteredProducts(productsResponse.data.stocks);
+      setCategories(categoriesResponse.data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+      */
+      console.log(productsResponse);
     };
     fetchData();
   }, []);
 
   const applyFilters = () => {
-    
     let filtered = [...products];
 
     if (selectedFuel.length > 0) {
-      console.log("applied filters 0");
-      filtered = filtered.filter(product =>
-        selectedFuel.includes(product.fuel)
-      );
+      filtered = filtered.filter(product => selectedFuel.includes(product.fuel));
     }
 
     filtered = filtered.filter(
-      product => {
-        console.log(priceRange.min, parseInt(product.priceNumeric), priceRange.max);
-        
-        console.log("applied filters 1");
-        return parseInt(product.priceNumeric) >= priceRange.min && parseInt(product.priceNumeric) <= priceRange.max
-      }
+      product => parseInt(product.priceNumeric) >= priceRange.min && parseInt(product.priceNumeric) <= priceRange.max
     );
 
-    filtered.sort((a, b) => {
-      console.log("applied filters 2");
-      return sortOrder === 'asc'
-        ? a.rating - b.rating
-        : b.rating - a.rating;
-    });
-    console.log(filtered);
-    
-    setFilteredProducts([...filtered]);
+    filtered.sort((a, b) => (sortOrder === 'asc' ? a.rating - b.rating : b.rating - a.rating));
+    setFilteredProducts(filtered);
   };
 
   useEffect(() => {
@@ -73,13 +72,8 @@ const App = () => {
   }, [selectedFuel, priceRange, sortOrder, products]);
 
   return (
-    <main>
-      <h1>
-        {filteredProducts.length} used cars in India
-      </h1>
-    <div className="app-container">
-      <FilterSection
-        categories={categories}
+    <main className="app-main">
+      <SortFilterSection
         selectedFuel={selectedFuel}
         setSelectedFuel={setSelectedFuel}
         priceRange={priceRange}
@@ -87,13 +81,21 @@ const App = () => {
         sortOrder={sortOrder}
         setSortOrder={setSortOrder}
       />
-      <div className="products-list">
-        {filteredProducts.map(product => (
+      <section>
+        <div className="sort-section">
+          <h3>Sort by Rating</h3>
+          <select value={sortOrder} onChange={(e) => setSortOrder(e.target.value)}>
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+          </select>
+        </div>
+        <div className="products-list">
+          {filteredProducts.map(product => (
             <ProductCard key={product.profileId} {...product} />
-        ))}
-      </div>
-      
-    </div>
+          ))}
+        </div>
+        <div className="results-count">{filteredProducts.length} results</div>
+      </section>
     </main>
   );
 };

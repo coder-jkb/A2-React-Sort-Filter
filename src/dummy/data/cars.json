@@ -1,0 +1,100 @@
+{
+    "stocks": [
+        {
+            "profileId": "1",
+            "stockImages": [ "https://imgd.aeplcdn.com/0x0/cw/static/icons/svg/usedcar/no-car-image-with-text.svg" ],
+            "carName": "Aston Martin DB11",
+            "fuel": "Petrol",
+            "cityName": "New York",
+            "priceNumeric": 2050000
+        },
+        {
+            "profileId": "2",
+            "stockImages": [ "https://imgd.aeplcdn.com/0x0/cw/static/icons/svg/usedcar/no-car-image-with-text.svg" ],
+            "carName": "BMW X5",
+            "fuel": "Diesel",
+            "cityName": "Los Angeles",
+            "priceNumeric": 600000
+        },
+        {
+            "profileId": "3",
+            "stockImages": [ "https://imgd.aeplcdn.com/0x0/cw/static/icons/svg/usedcar/no-car-image-with-text.svg" ],
+            "carName": "Audi A4",
+            "fuel": "Petrol",
+            "cityName": "Chicago",
+            "priceNumeric": 400000
+        },
+        {
+            "profileId": "4",
+            "stockImages": [ "https://imgd.aeplcdn.com/0x0/cw/static/icons/svg/usedcar/no-car-image-with-text.svg" ],
+            "carName": "Tesla Model S",
+            "fuel": "Electric",
+            "cityName": "San Francisco",
+            "priceNumeric": 79900
+        },
+        {
+            "profileId": "5",
+            "stockImages": [ "https://imgd.aeplcdn.com/0x0/cw/static/icons/svg/usedcar/no-car-image-with-text.svg" ],
+            "carName": "Mercedes-Benz C-Class",
+            "fuel": "Petrol",
+            "cityName": "Houston",
+            "priceNumeric": 420000
+        },
+        {
+            "profileId": "6",
+            "stockImages": [ "https://imgd.aeplcdn.com/0x0/cw/static/icons/svg/usedcar/no-car-image-with-text.svg" ],
+            "carName": "Ford Mustang",
+            "fuel": "Petrol",
+            "cityName": "Miami",
+            "priceNumeric": 550000
+        },
+        {
+            "profileId": "7",
+            "stockImages": [ "https://imgd.aeplcdn.com/0x0/cw/static/icons/svg/usedcar/no-car-image-with-text.svg" ],
+            "carName": "Chevrolet Camaro",
+            "fuel": "Petrol",
+            "cityName": "Seattle",
+            "priceNumeric": 480000
+        },
+        {
+            "profileId": "8",
+            "stockImages": [ "https://imgd.aeplcdn.com/0x0/cw/static/icons/svg/usedcar/no-car-image-with-text.svg" ],
+            "carName": "Honda Accord",
+            "fuel": "Hybrid",
+            "cityName": "Boston",
+            "priceNumeric": 350000
+        },
+        {
+            "profileId": "9",
+            "stockImages": [ "https://imgd.aeplcdn.com/0x0/cw/static/icons/svg/usedcar/no-car-image-with-text.svg" ],
+            "carName": "Nissan Rogue",
+            "fuel": "Petrol",
+            "cityName": "Atlanta",
+            "priceNumeric": 300000
+        },
+        {
+            "profileId": "10",
+            "stockImages": [ "https://imgd.aeplcdn.com/0x0/cw/static/icons/svg/usedcar/no-car-image-with-text.svg" ],
+            "carName": "Jeep Grand Cherokee",
+            "fuel": "Diesel",
+            "cityName": "Denver",
+            "priceNumeric": 650000
+        },
+        {
+            "profileId": "11",
+            "stockImages": [ "https://imgd.aeplcdn.com/0x0/cw/static/icons/svg/usedcar/no-car-image-with-text.svg" ],
+            "carName": "Subaru Outback",
+            "fuel": "Petrol",
+            "cityName": "Portland",
+            "priceNumeric": 370000
+        },
+        {
+            "profileId": "12",
+            "stockImages": [ "https://imgd.aeplcdn.com/0x0/cw/static/icons/svg/usedcar/no-car-image-with-text.svg" ],
+            "carName": "Kia Sorento",
+            "fuel": "Hybrid",
+            "cityName": "Philadelphia",
+            "priceNumeric": 340000
+        }
+    ]
+}
